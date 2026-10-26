@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prathyash &amp; Soumya — Wedding Invitation</title>
+<meta name="description" content="Prathyash P Chacko and Soumya Samraj invite you to their wedding on Thursday, 26 November 2026, Kattappana.">
+<meta name="theme-color" content="#1a0b12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1a0b12; --bg2:#2b1020; --ink:#faf0ea; --ink-soft:#d3bcbf;
+  --gold:#e6aa92; --gold-2:#f8d9c9; --leaf:#c98a8a;
+  --glass:rgba(255,255,255,.055); --glass-line:rgba(244,239,228,.16);
+  --serif:"Cormorant Garamond",Georgia,serif; --script:"Great Vibes",cursive; --ui:"Jost",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 clamp(18px,2.2vw,21px)/1.65 var(--serif);overflow-x:hidden}
+/* ambient aurora + grain */
+.aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(120% 80% at 50% 0,var(--bg2),var(--bg))}
+.aurora i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(90px);opacity:.38;animation:drift 22s ease-in-out infinite alternate}
+.aurora i:nth-child(1){background:#7a1f40;top:-20%;left:-15%}
+.aurora i:nth-child(2){background:#9a5a3c;bottom:-25%;right:-20%;animation-duration:28s;opacity:.25}
+.aurora i:nth-child(3){background:#4a2a63;top:35%;left:40%;animation-duration:34s;opacity:.22}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+#petals{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.petal{position:absolute;top:-6vh;width:var(--s);height:calc(var(--s)*1.3);background:linear-gradient(135deg,#fff,#e9e2cf);
+  border-radius:80% 0 80% 0;opacity:.0;animation:fall var(--d) linear var(--delay) infinite;box-shadow:0 0 8px rgba(255,255,255,.2)}
+@keyframes fall{0%{transform:translate3d(0,0,0) rotate(0);opacity:0}10%{opacity:.75}
+  100%{transform:translate3d(var(--x),112vh,0) rotate(var(--r));opacity:.1}}
+main{position:relative;z-index:1}
+section{padding:clamp(72px,12vw,140px) 20px;max-width:1040px;margin:0 auto;text-align:center}
+.eyebrow{font:500 .78rem/1 var(--ui);letter-spacing:.36em;text-transform:uppercase;color:var(--gold)}
+.hero{position:relative;isolation:isolate;text-align:center;padding:88vw 16px 70px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.hero::before{content:"";position:absolute;z-index:-1;left:0;right:0;top:0;height:150vw;background:url(couple.webp) 50% 0/cover no-repeat;
+  -webkit-mask-image:linear-gradient(#000 42%,transparent 92%);mask-image:linear-gradient(#000 42%,transparent 92%);animation:kb 18s ease-in-out infinite alternate;transform-origin:50% 20%}
+@keyframes kb{to{transform:scale(1.07)}}
+@media(min-width:800px){.hero{padding-top:min(600px,70vh)}
+  .hero::before{left:0;right:0;margin:0 auto;width:min(460px,60vw);height:auto;aspect-ratio:2/3;background-size:100% 100%;animation:none;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 24%,#000 76%,transparent),linear-gradient(to bottom,transparent,#000 16%,#000 52%,transparent 96%);
+    -webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 24%,#000 76%,transparent),linear-gradient(to bottom,transparent,#000 16%,#000 52%,transparent 96%);mask-composite:intersect}}
+.hero .names,.hero .eyebrow,.hero .verse{text-shadow:0 2px 24px rgba(26,11,18,.7)}
+.cross{width:30px;color:var(--gold);margin-bottom:14px;filter:drop-shadow(0 0 14px rgba(230,170,146,.5))}
+.verse{font-style:italic;color:var(--ink-soft);margin-top:8px}
+.verse small{display:block;font:500 .72rem/1.8 var(--ui);letter-spacing:.2em;text-transform:uppercase;font-style:normal;color:var(--gold)}
+.names{margin:clamp(18px,4vw,36px) 0}
+.n{display:block;padding:.08em .2em .22em;font:400 clamp(3.2rem,13vw,8rem)/1.05 var(--script);
+  background:linear-gradient(100deg,var(--ink) 20%,var(--gold-2) 45%,var(--ink) 70%);background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s ease-in-out infinite alternate}
+.n+.amp{display:block;font:400 clamp(1.6rem,5vw,2.6rem)/1 var(--script);color:var(--gold);margin:4px 0}
+@keyframes shine{to{background-position:-120% 0}}
+.date-pill{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;align-items:center;padding:12px 22px;font-size:.8rem;white-space:nowrap;border:1px solid var(--glass-line);border-radius:999px;
+  background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:500 .9rem/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;border-radius:28px}
+.date-pill b{color:var(--gold);font-weight:500}
+.scroll{margin-top:44px;width:26px;height:44px;border:1.5px solid var(--glass-line);border-radius:14px;position:relative}
+.scroll::after{content:"";position:absolute;left:50%;top:8px;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:var(--gold);animation:wheel 1.8s ease-in-out infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+h2{font:400 clamp(2.4rem,7vw,4rem)/1.15 var(--script);color:var(--gold-2);margin:14px 0 8px}
+.lead{max-width:34ch;margin:0 auto;font-size:clamp(1.25rem,3vw,1.6rem);color:var(--ink)}
+.lead em{color:var(--gold-2)}
+/* countdown */
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,2vw,18px);max-width:640px;margin:30px auto 0}
+.count div{padding:clamp(14px,3vw,26px) 4px;border-radius:20px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.count b{display:block;font:500 clamp(1.8rem,7vw,3.2rem)/1 var(--ui);font-variant-numeric:tabular-nums;color:var(--ink)}
+.count span{font:500 .66rem/1 var(--ui);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+/* families */
+.pair{display:grid;gap:18px;margin-top:34px;grid-template-columns:1fr}
+@media(min-width:720px){.pair{grid-template-columns:1fr 1fr}}
+.card{position:relative;padding:clamp(26px,4vw,40px);border-radius:28px;text-align:left;background:var(--glass);border:1px solid var(--glass-line);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden;transition:transform .5s var(--ease),border-color .3s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(230,170,146,.18),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(230,170,146,.5)}
+.card:hover::before{opacity:1}
+.card>*{position:relative}
+.role{font:500 .72rem/1 var(--ui);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.card .who{font:400 clamp(2.2rem,5vw,3rem)/1.2 var(--script);margin:10px 0 6px;color:var(--ink)}
+.card p{color:var(--ink-soft)}
+/* events */
+.events{display:grid;gap:18px;margin-top:36px}
+@media(min-width:820px){.events{grid-template-columns:1fr 1fr}}
+.time{font:500 clamp(2.4rem,6vw,3.4rem)/1 var(--ui);color:var(--gold-2);letter-spacing:-.01em}
+.time small{font-size:.38em;letter-spacing:.2em;margin-left:6px;color:var(--gold)}
+.rows{list-style:none;padding:0;margin:18px 0 6px;display:grid;gap:12px}
+.rows li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.rows svg{width:20px;height:20px;color:var(--gold);margin-top:5px}
+.rows small{display:block;font:500 .66rem/1.2 var(--ui);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;cursor:pointer;
+  font:500 .82rem/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);
+  background:transparent;border:1px solid var(--glass-line);transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s}
+.btn svg{width:17px;height:17px}
+.btn.primary{background:linear-gradient(120deg,var(--gold),var(--gold-2));color:#2a1009;border-color:transparent;font-weight:600}
+.btn:hover{transform:translateY(-3px)}
+.btn:not(.primary):hover{border-color:var(--gold);color:var(--gold-2)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px}
+.thanks{margin:0 auto;max-width:30ch;font-size:clamp(1.3rem,3vw,1.7rem)}
+.love{font:400 clamp(1.8rem,5vw,2.6rem)/1.3 var(--script);color:var(--gold);margin-top:18px}
+footer{padding:0 20px 60px;text-align:center;font:500 .7rem/1 var(--ui);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);filter:blur(8px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease);transition-delay:var(--dl,0s)}
+.rv.in{opacity:1;transform:none;filter:none}
+.hero .rv{animation:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;filter:none;transition:none}
+  .aurora i,.n,.scroll::after,.hero::before{animation:none}
+  #petals{display:none}
+  .card,.btn{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+<div id="petals" aria-hidden="true"></div>
+
+<main>
+  <header class="hero">
+    <svg class="cross rv" viewBox="0 0 40 60" fill="currentColor" aria-hidden="true"><path d="M17 0h6v16h14v6H23v38h-6V22H3v-6h14z"/></svg>
+    <p class="eyebrow rv" style="--dl:.1s">In the Presence of God</p>
+    <p class="verse rv" style="--dl:.2s">“Two are better than one…”<small>Ecclesiastes 4:9</small></p>
+    <h1 class="names">
+      <span class="n rv" style="--dl:.35s">Prathyash P Chacko</span>
+      <span class="amp rv" style="--dl:.5s" aria-hidden="true">&amp;</span>      <span class="n rv" style="--dl:.65s">Soumya Samraj</span>
+    </h1>
+    <div class="date-pill rv" style="--dl:.85s"><span>Thursday</span><b>26 · 11 · 2026</b><span>Kattappana</span></div>
+    <div class="scroll rv" style="--dl:1.1s" aria-hidden="true"></div>
+  </header>
+
+  <section id="invite">
+    <p class="eyebrow rv">Together with their families</p>
+    <h2 class="rv" style="--dl:.1s">Request the honour of your presence</h2>
+    <p class="lead rv" style="--dl:.2s">as they unite in <em>Holy Matrimony</em> according to the Word of God and the customs of the Believers Church.</p>
+    <div class="count rv" style="--dl:.3s" role="timer" aria-label="Countdown to the wedding">
+      <div><b id="cd-d">--</b><span>Days</span></div>
+      <div><b id="cd-h">--</b><span>Hours</span></div>
+      <div><b id="cd-m">--</b><span>Mins</span></div>
+      <div><b id="cd-s">--</b><span>Secs</span></div>
+    </div>
+  </section>
+
+  <section id="families">
+    <p class="eyebrow rv">The Families</p>
+    <div class="pair">
+      <article class="card rv">
+        <p class="role">The Groom</p>
+        <p class="who">Prathyash P Chacko</p>
+        <p>Son of Rev. Chackochan PS and Mercy Chackochan</p>
+      </article>
+      <article class="card rv" style="--dl:.12s">
+        <p class="role">The Bride</p>
+        <p class="who">Soumya Samraj</p>
+        <p>Daughter of Late Samraj and Late Vincinveni</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="events">
+    <p class="eyebrow rv">Save the date</p>
+    <h2 class="rv" style="--dl:.1s">Thursday, 26 November 2026</h2>
+    <div class="events">
+      <article class="card rv">
+        <p class="role">Wedding Ceremony</p>
+        <p class="time">10:30<small>AM</small></p>
+        <ul class="rows">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v4M10 5h4M5 21V12l7-4 7 4v9zM10 21v-5h4v5"/></svg><span><small>Church</small>St. Thomas Believers Eastern Church</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span><small>Location</small>Kattappana</span></li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=St.Thomas+Believers+Eastern+Church+Kattappana">Directions</a>
+          <button class="btn" type="button" data-ics="wedding">Add to calendar</button>
+        </div>
+      </article>
+      <article class="card rv" style="--dl:.12s">
+        <p class="role">Reception</p>
+        <p class="time">1:00<small>PM</small></p>
+        <ul class="rows">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg><span><small>Venue</small>St. Paul’s Syriac Malankara Catholic Church Parish hall</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span><small>Location</small>Kattappana</span></li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=St.+Paul%27s+Syriac+Malankara+Catholic+Church+Kattappana">Directions</a>
+          <button class="btn" type="button" data-ics="reception">Add to calendar</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="closing">
+    <p class="thanks rv">Your gracious presence and blessings will make our special day even more memorable.</p>
+    <p class="love rv" style="--dl:.15s">With love and blessings from both families</p>
+  </section>
+</main>
+<footer>Prathyash &amp; Soumya · 26.11.2026</footer>
+
+<script>
+const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+// scroll reveal
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// falling petals
+if (!reduce) {
+  const box = document.getElementById('petals');
+  for (let i = 0; i < 16; i++) {
+    const p = document.createElement('i');
+    p.className = 'petal';
+    p.style.cssText = `left:${Math.random()*100}%;--s:${8+Math.random()*10}px;--d:${14+Math.random()*14}s;` +
+      `--delay:${-Math.random()*26}s;--x:${(Math.random()-.5)*200}px;--r:${(Math.random()>.5?1:-1)*(200+Math.random()*400)}deg`;
+    box.appendChild(p);
+  }
+}
+
+// card spotlight follows pointer
+document.querySelectorAll('.card').forEach(c => c.addEventListener('pointermove', e => {
+  const r = c.getBoundingClientRect();
+  c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+  c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+}));
+
+// countdown to ceremony (IST)
+const target = new Date('2026-11-26T10:30:00+05:30').getTime();
+const $ = id => document.getElementById(id);
+function tick() {
+  const t = Math.max(0, target - Date.now());
+  const pad = n => String(n).padStart(2, '0');
+  $('cd-d').textContent = Math.floor(t / 864e5);
+  $('cd-h').textContent = pad(Math.floor(t / 36e5) % 24);
+  $('cd-m').textContent = pad(Math.floor(t / 6e4) % 60);
+  $('cd-s').textContent = pad(Math.floor(t / 1e3) % 60);
+}
+tick(); setInterval(tick, 1000);
+
+// add-to-calendar (.ics); reception end time assumed 3:00 pm
+const events = {
+  wedding:   { n: 'Wedding of Prathyash & Soumya', s: '20261126T103000', e: '20261126T123000', l: 'St. Thomas Believers Eastern Church, Kattappana' },
+  reception: { n: 'Reception – Prathyash & Soumya', s: '20261126T130000', e: '20261126T150000', l: "St. Paul's Syriac Malankara Catholic Church Parish hall, Kattappana" }
+};
+document.querySelectorAll('[data-ics]').forEach(b => b.addEventListener('click', () => {
+  const v = events[b.dataset.ics];
+  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding//EN','BEGIN:VEVENT',
+    `UID:${b.dataset.ics}-20261126@soumya-prathyash`,`DTSTAMP:${new Date().toISOString().replace(/[-:]|\.\d+/g,'')}`,
+    `DTSTART;TZID=Asia/Kolkata:${v.s}`,`DTEND;TZID=Asia/Kolkata:${v.e}`,
+    `SUMMARY:${v.n}`,`LOCATION:${v.l.replace(/,/g,'\\,')}`,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+  a.download = b.dataset.ics + '.ics';
+  a.click(); URL.revokeObjectURL(a.href);
+}));
+</script>
+</body>
+</html>
