@@ -38,12 +38,14 @@ body{background:var(--bg);color:var(--ink);font:400 clamp(18px,2.2vw,21px)/1.65 
 main{position:relative;z-index:1}
 section{padding:clamp(72px,12vw,140px) 20px;max-width:1040px;margin:0 auto;text-align:center}
 .eyebrow{font:500 .78rem/1 var(--ui);letter-spacing:.36em;text-transform:uppercase;color:var(--gold)}
-.hero{position:relative;isolation:isolate;text-align:center;padding:88vw 16px 70px;display:flex;flex-direction:column;align-items:center;gap:6px}
-.hero::before{content:"";position:absolute;z-index:-1;left:0;right:0;top:0;height:150vw;background:url(couple.webp) 50% 0/cover no-repeat;
-  -webkit-mask-image:linear-gradient(#000 42%,transparent 92%);mask-image:linear-gradient(#000 42%,transparent 92%);animation:kb 18s ease-in-out infinite alternate;transform-origin:50% 20%}
-@keyframes kb{to{transform:scale(1.07)}}
+.hero{position:relative;isolation:isolate;text-align:center;padding:100vw 16px 70px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.slides{position:absolute;z-index:-1;left:0;right:0;top:0;height:150vw;overflow:hidden;
+  -webkit-mask-image:linear-gradient(#000 42%,transparent 92%);mask-image:linear-gradient(#000 42%,transparent 92%)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;opacity:0;transform:scale(1);transition:opacity 1.2s ease}
+.slides img.on{opacity:1;animation:kb 5s ease-out forwards}
+@keyframes kb{to{transform:scale(1.06)}}
 @media(min-width:800px){.hero{padding-top:min(600px,70vh)}
-  .hero::before{left:0;right:0;margin:0 auto;width:min(460px,60vw);height:auto;aspect-ratio:2/3;background-size:100% 100%;animation:none;
+  .slides{left:0;right:0;margin:0 auto;width:min(460px,60vw);height:auto;aspect-ratio:2/3;
     -webkit-mask-image:linear-gradient(to right,transparent,#000 24%,#000 76%,transparent),linear-gradient(to bottom,transparent,#000 16%,#000 52%,transparent 96%);
     -webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 24%,#000 76%,transparent),linear-gradient(to bottom,transparent,#000 16%,#000 52%,transparent 96%);mask-composite:intersect}}
 .hero .names,.hero .eyebrow,.hero .verse{text-shadow:0 2px 24px rgba(26,11,18,.7)}
@@ -101,6 +103,32 @@ h2{font:400 clamp(2.4rem,7vw,4rem)/1.15 var(--script);color:var(--gold-2);margin
 .btn:not(.primary):hover{border-color:var(--gold);color:var(--gold-2)}
 .btn:active{transform:scale(.97)}
 .btn:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px}
+section.wide{max-width:1200px}
+.g-grid{columns:2 140px;column-gap:10px;margin-top:30px}
+@media(min-width:700px){.g-grid{columns:3;column-gap:14px}}
+@media(min-width:1000px){.g-grid{columns:4}}
+.g-item{display:block;width:100%;margin:0 0 10px;padding:0;border:0;border-radius:16px;overflow:hidden;cursor:zoom-in;background:var(--glass);break-inside:avoid;
+  position:relative;transition:transform .45s var(--ease),box-shadow .45s}
+@media(min-width:700px){.g-item{margin-bottom:14px}}
+.g-item img{display:block;width:100%;height:auto;transition:transform .8s var(--ease)}
+.g-item:hover{box-shadow:0 14px 36px rgba(0,0,0,.45)}
+.g-item:hover img{transform:scale(1.06)}
+.g-item:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px}
+#lb{border:0;padding:0;background:rgba(14,5,9,.94);width:100vw;max-width:none;height:100dvh;max-height:none;color:var(--ink);overflow:hidden}
+#lb[open]{display:grid;place-items:center;animation:lbin .3s ease}
+#lb::backdrop{background:rgba(14,5,9,.9);backdrop-filter:blur(6px)}
+@keyframes lbin{from{opacity:0}}
+#lb-img{max-width:min(94vw,900px);max-height:84dvh;object-fit:contain;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.6);touch-action:pan-y}
+#lb-img.sw{animation:lbsw .35s var(--ease)}
+@keyframes lbsw{from{opacity:0;transform:translateX(var(--d,24px))}}
+.lb-btn{position:absolute;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--glass-line);background:rgba(255,255,255,.08);
+  color:var(--ink);font:300 2rem/1 var(--ui);cursor:pointer;transition:background .2s,transform .2s}
+.lb-btn:hover{background:rgba(255,255,255,.18)}
+.lb-btn:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+.lb-close{top:16px;right:16px}
+.lb-prev,.lb-next{top:50%;margin-top:-24px}
+.lb-prev{left:12px}.lb-next{right:12px}
+#lb-count{position:absolute;bottom:18px;left:0;right:0;text-align:center;font:500 .8rem/1 var(--ui);letter-spacing:.24em;color:var(--ink-soft)}
 .thanks{margin:0 auto;max-width:30ch;font-size:clamp(1.3rem,3vw,1.7rem)}
 .love{font:400 clamp(1.8rem,5vw,2.6rem)/1.3 var(--script);color:var(--gold);margin-top:18px}
 footer{padding:0 20px 60px;text-align:center;font:500 .7rem/1 var(--ui);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
@@ -111,9 +139,9 @@ footer{padding:0 20px 60px;text-align:center;font:500 .7rem/1 var(--ui);letter-s
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .rv{opacity:1;transform:none;filter:none;transition:none}
-  .aurora i,.n,.scroll::after,.hero::before{animation:none}
+  .aurora i,.n,.scroll::after{animation:none}.slides img{transition:none;animation:none!important}
   #petals{display:none}
-  .card,.btn{transition:none}
+  .card,.btn,.g-item,.g-item img{transition:none}#lb[open],#lb-img.sw{animation:none}
 }
 </style>
 </head>
@@ -124,6 +152,7 @@ footer{padding:0 20px 60px;text-align:center;font:500 .7rem/1 var(--ui);letter-s
 
 <main>
   <header class="hero">
+    <div class="slides" aria-hidden="true"><img src="images/bg-1.webp" alt="" class="on" width="1000" height="1500"><img src="images/bg-2.webp" alt="" width="1000" height="1500"><img src="images/bg-3.webp" alt="" width="1000" height="1500"><img src="images/bg-4.webp" alt="" width="1000" height="1500"><img src="images/bg-5.webp" alt="" width="1000" height="1500"><img src="images/bg-6.webp" alt="" width="1000" height="1500"><img src="images/bg-7.webp" alt="" width="1000" height="1500"><img src="images/bg-8.webp" alt="" width="1000" height="1500"><img src="images/bg-9.webp" alt="" width="1000" height="1500"><img src="images/bg-10.webp" alt="" width="1000" height="1500"><img src="images/bg-11.webp" alt="" width="1000" height="1500"></div>
     <svg class="cross rv" viewBox="0 0 40 60" fill="currentColor" aria-hidden="true"><path d="M17 0h6v16h14v6H23v38h-6V22H3v-6h14z"/></svg>
     <p class="eyebrow rv" style="--dl:.1s">In the Presence of God</p>
     <p class="verse rv" style="--dl:.2s">“Two are better than one…”<small>Ecclesiastes 4:9</small></p>
@@ -194,6 +223,35 @@ footer{padding:0 20px 60px;text-align:center;font:500 .7rem/1 var(--ui);letter-s
     </div>
   </section>
 
+  <section id="gallery" class="wide">
+    <p class="eyebrow rv">Moments</p>
+    <h2 class="rv" style="--dl:.1s">Our Gallery</h2>
+    <div class="g-grid">
+      <button class="g-item rv" type="button" data-i="0" aria-label="Open photo 1 of 14"><img src="images/gallery/1-t.webp" width="520" height="689" loading="lazy" alt="Prathyash and Soumya, photo 1"></button>
+      <button class="g-item rv" type="button" data-i="1" aria-label="Open photo 2 of 14"><img src="images/gallery/2-t.webp" width="520" height="780" loading="lazy" alt="Prathyash and Soumya, photo 2"></button>
+      <button class="g-item rv" type="button" data-i="2" aria-label="Open photo 3 of 14"><img src="images/gallery/3-t.webp" width="520" height="644" loading="lazy" alt="Prathyash and Soumya, photo 3"></button>
+      <button class="g-item rv" type="button" data-i="3" aria-label="Open photo 4 of 14"><img src="images/gallery/4-t.webp" width="520" height="689" loading="lazy" alt="Prathyash and Soumya, photo 4"></button>
+      <button class="g-item rv" type="button" data-i="4" aria-label="Open photo 5 of 14"><img src="images/gallery/5-t.webp" width="520" height="689" loading="lazy" alt="Prathyash and Soumya, photo 5"></button>
+      <button class="g-item rv" type="button" data-i="5" aria-label="Open photo 6 of 14"><img src="images/gallery/6-t.webp" width="520" height="644" loading="lazy" alt="Prathyash and Soumya, photo 6"></button>
+      <button class="g-item rv" type="button" data-i="6" aria-label="Open photo 7 of 14"><img src="images/gallery/7-t.webp" width="440" height="780" loading="lazy" alt="Prathyash and Soumya, photo 7"></button>
+      <button class="g-item rv" type="button" data-i="7" aria-label="Open photo 8 of 14"><img src="images/gallery/8-t.webp" width="440" height="780" loading="lazy" alt="Prathyash and Soumya, photo 8"></button>
+      <button class="g-item rv" type="button" data-i="8" aria-label="Open photo 9 of 14"><img src="images/gallery/9-t.webp" width="520" height="660" loading="lazy" alt="Prathyash and Soumya, photo 9"></button>
+      <button class="g-item rv" type="button" data-i="9" aria-label="Open photo 10 of 14"><img src="images/gallery/10-t.webp" width="440" height="780" loading="lazy" alt="Prathyash and Soumya, photo 10"></button>
+      <button class="g-item rv" type="button" data-i="10" aria-label="Open photo 11 of 14"><img src="images/gallery/11-t.webp" width="520" height="780" loading="lazy" alt="Prathyash and Soumya, photo 11"></button>
+      <button class="g-item rv" type="button" data-i="11" aria-label="Open photo 12 of 14"><img src="images/gallery/12-t.webp" width="520" height="689" loading="lazy" alt="Prathyash and Soumya, photo 12"></button>
+      <button class="g-item rv" type="button" data-i="12" aria-label="Open photo 13 of 14"><img src="images/gallery/13-t.webp" width="440" height="780" loading="lazy" alt="Prathyash and Soumya, photo 13"></button>
+      <button class="g-item rv" type="button" data-i="13" aria-label="Open photo 14 of 14"><img src="images/gallery/14-t.webp" width="440" height="780" loading="lazy" alt="Prathyash and Soumya, photo 14"></button>
+    </div>
+  </section>
+
+  <dialog id="lb" aria-label="Photo viewer">
+    <button class="lb-btn lb-close" type="button" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">&#8249;</button>
+    <img id="lb-img" alt="">
+    <button class="lb-btn lb-next" type="button" aria-label="Next photo">&#8250;</button>
+    <p id="lb-count" aria-live="polite"></p>
+  </dialog>
+
   <section id="closing">
     <p class="thanks rv">Your gracious presence and blessings will make our special day even more memorable.</p>
     <p class="love rv" style="--dl:.15s">With love and blessings from both families</p>
@@ -258,6 +316,38 @@ document.querySelectorAll('[data-ics]').forEach(b => b.addEventListener('click',
   a.download = b.dataset.ics + '.ics';
   a.click(); URL.revokeObjectURL(a.href);
 }));
+// hero background slideshow, 3s per photo
+const slides = [...document.querySelectorAll('.slides img')];
+if (!reduce && slides.length > 1) {
+  let k = 0;
+  setInterval(() => {
+    slides[k].classList.remove('on');
+    k = (k + 1) % slides.length;
+    slides[k].classList.add('on');
+  }, 3000);
+}
+// gallery lightbox
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbCount = document.getElementById('lb-count');
+const thumbs = [...document.querySelectorAll('.g-item')];
+let cur = 0;
+function show(i, dir = 0) {
+  cur = (i + thumbs.length) % thumbs.length;
+  lbImg.src = `images/gallery/${cur + 1}.webp`;
+  lbImg.alt = thumbs[cur].querySelector('img').alt;
+  lbCount.textContent = `${cur + 1} / ${thumbs.length}`;
+  if (!reduce && dir) { lbImg.style.setProperty('--d', dir * 28 + 'px'); lbImg.classList.remove('sw'); void lbImg.offsetWidth; lbImg.classList.add('sw'); }
+  new Image().src = `images/gallery/${(cur + 1) % thumbs.length + 1}.webp`;
+}
+thumbs.forEach((t, i) => t.addEventListener('click', () => { show(i); lb.showModal(); document.body.style.overflow = 'hidden'; }));
+lb.querySelector('.lb-close').onclick = () => lb.close();
+lb.querySelector('.lb-prev').onclick = () => show(cur - 1, -1);
+lb.querySelector('.lb-next').onclick = () => show(cur + 1, 1);
+lb.addEventListener('close', () => { document.body.style.overflow = ''; });
+lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') show(cur - 1, -1); if (e.key === 'ArrowRight') show(cur + 1, 1); });
+let x0 = null;
+lbImg.addEventListener('pointerdown', e => { x0 = e.clientX; });
+lbImg.addEventListener('pointerup', e => { if (x0 !== null && Math.abs(e.clientX - x0) > 50) show(cur + (e.clientX < x0 ? 1 : -1), e.clientX < x0 ? 1 : -1); x0 = null; });
 </script>
 </body>
 </html>
